@@ -17,9 +17,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
-    - name: Install dependencies
-      run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: msbuild src\Unity.Experimental.csproj /t:Rebuild /p:Configuration=Release
+
+  test:
+
+    runs-on: windows-latest
