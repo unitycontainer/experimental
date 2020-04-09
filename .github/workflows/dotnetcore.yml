@@ -28,5 +28,5 @@ jobs:
       run: nuget restore src\Unity.Experimental.csproj
 
     - name: Build
-      run: msbuild src\Unity.Experimental.csproj /t:Build /p:Configuration=Release -v:q
+      run: msbuild src\Unity.Experimental.csproj /t:Build /p:Configuration=Release -v:m
 
