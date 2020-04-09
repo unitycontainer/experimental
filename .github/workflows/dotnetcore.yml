@@ -21,6 +21,8 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.2
     - name: Restore
       run: nuget restore src\Unity.Experimental.csproj
+    - name: setup-msbuild
+      uses: microsoft/setup-msbuild@v1
     - name: Build
       run: msbuild src\Unity.Experimental.csproj /t:Build /p:Configuration=Release
 
