@@ -20,6 +20,3 @@ jobs:
     - name: Build
       run: msbuild src\Unity.Experimental.csproj /t:Rebuild /p:Configuration=Release
 
-  test:
-
-    runs-on: windows-latest
