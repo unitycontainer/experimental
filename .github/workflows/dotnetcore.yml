@@ -29,4 +29,12 @@ jobs:
 
     - name: Build
       run: msbuild src\Unity.Experimental.csproj /t:Build /p:Configuration=Release -v:m
+      
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: '*.nupkg'
+        # Directory containing files to upload
+        path: src\bin\Release
 
