@@ -17,6 +17,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
+    - name: Setup Nuget
+      uses: warrenbuckley/Setup-Nuget@v1
+    - name: Restore
+      run: nuget restore src\Unity.Experimental.csproj
     - name: setup-msbuild
       uses: microsoft/setup-msbuild@v1
     - name: Build
