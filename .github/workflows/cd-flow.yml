@@ -16,7 +16,7 @@ jobs:
 
   call-publish-artifact-flow:
     needs: [ call-build-package-flow ]
-    if: ${{ always() && !cancelled() && needs.build.result == 'success' }}
+    # if: ${{ always() && !cancelled() && needs.build.result == 'success' }}
     uses: unitycontainer/.github/.github/workflows/publish-artifact-flow.yml@main
     with:
       artifact-name: 'experimental'
