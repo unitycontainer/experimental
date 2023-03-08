@@ -14,10 +14,10 @@ jobs:
       artifact-name: 'experimental'
     secrets: inherit 
 
-  call-continuous-deployment-flow:
+  call-publish-artifact-flow:
     needs: [ call-build-package-flow ]
     if: ${{ always() && !cancelled() && needs.build.result == 'success' }}
-    uses: unitycontainer/.github/.github/workflows/continuous-deployment-flow.yml@main
+    uses: unitycontainer/.github/.github/workflows/publish-artifact-flow.yml@main
     with:
       artifact-name: 'experimental'
     secrets: inherit
