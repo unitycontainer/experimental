@@ -1,4 +1,4 @@
-name:  Continuous Deployment
+name:  Continuous Deployment 
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
 
 jobs:
 
-  call-workflow-passing-data:
+  call-/build-package-flow:
     uses: unitycontainer/.github/.github/workflows/build-package-flow.yml@main
     with:
       version-mode: 'ContinuousDeployment'
