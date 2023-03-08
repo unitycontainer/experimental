@@ -14,8 +14,8 @@ jobs:
       artifact-name: 'experimental'
     secrets: inherit 
 
-  call-publish-artifact-flow:
-    uses: unitycontainer/.github/.github/workflows/publish-artifact-flow.yml@main
+  call-continuous-deployment-flow:
+    uses: unitycontainer/.github/.github/workflows/continuous-deployment-flow.yml@main
     with:
       artifact-name: 'experimental'
     secrets: inherit
