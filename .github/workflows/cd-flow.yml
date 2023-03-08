@@ -9,9 +9,9 @@ on:
 permissions:
   packages: write
 
-jobs:
+jobs: 
 
-  call-/build-package-flow:
+  call-build-package-flow:
     uses: unitycontainer/.github/.github/workflows/build-package-flow.yml@main
     with:
       version-mode: 'ContinuousDeployment'
