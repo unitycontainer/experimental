@@ -1,0 +1,31 @@
+image: Visual Studio 2022
+configuration: Release
+
+branches:
+  only:
+    - main
+    - master
+
+install:
+  - choco install gitversion.portable -pre -y
+  - ps: gitversion /l console /output buildserver /config .github\gitversion.yml
+  - ps: $env:Version = $env:GitVersion_MajorMinorPatch
+  - ps: $env:FileVersion = $env:GitVersion_AssemblySemFileVer
+  - ps: $env:PackageVersion = $env:GitVersion_SemVer
+  - ps: $env:AssemblyVersion = $env:GitVersion_AssemblySemVer
+  - ps: $env:InformationalVersion = $env:GitVersion_InformationalVersion
+
+dotnet_csproj:
+  patch: false
+
+before_build:
+  - cmd: dotnet restore
+ 
+build:
+  project: package.sln
+  parallel: true
+  verbosity: minimal
+
+artifacts:
+- path: '**\Unity.*.nupkg'
+  name: 'Abstractions'
