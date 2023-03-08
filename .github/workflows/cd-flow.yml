@@ -12,7 +12,7 @@ permissions:
 jobs:
 
   # checkout: 
-  #   env:
+  #   env: 
   #     DOTNET_NOLOGO: '1'
   #     DOTNET_CLI_TELEMETRY_OPTOUT: '1'
   #     # PackageOutputPath: '${{ github.workspace }}\package'
