@@ -5,7 +5,7 @@ on:
     branches:
       - 'release/**'    
       - 'prototype/**'    
-
+ 
 permissions:
   packages: write
 
