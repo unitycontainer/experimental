@@ -18,7 +18,7 @@ jobs:
 
 
   call-workflow-passing-data:
-    uses: unitycontainer/.github/.github/workflows/build-test-flow.yml@main
+    uses: unitycontainer/.github/.github/workflows/continuous-deployment-flow.yml@main
     with:
       checkout-path: ''
       PackageOutputPath: '${{ github.workspace }}\package'
