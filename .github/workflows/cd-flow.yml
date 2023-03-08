@@ -6,22 +6,16 @@ on:
     #   - 'release/**'    
     #   - 'prototype/**'    
  
-permissions:
-  packages: write
-
 jobs: 
 
   call-build-package-flow:
     uses: unitycontainer/.github/.github/workflows/build-package-flow.yml@main
     with:
       artifact-name: 'experimental'
+    secrets: inherit 
+
+  call-publish-artifact-flow:
+    uses: unitycontainer/.github/.github/workflows/publish-artifact-flow.yml@main
+    with:
+      artifact-name: 'experimental'
     secrets: inherit
- 
-
-    # - name: Publish Local Package
-    #   run: | 
-    #     dotnet nuget add source "https://nuget.pkg.github.com/unitycontainer/index.json" -n github -u unitycontainer -p ${{secrets.GITHUB_TOKEN}} --store-password-in-clear-text
-    #     dotnet nuget push '${{ env.PackageOutputPath }}\*' --skip-duplicate --source github
-
-    # - name: Label Fixed Issues
-    #   uses: gh-bot/fix-labeler@master        
